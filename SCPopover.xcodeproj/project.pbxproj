@@ -14,6 +14,7 @@
 		4974B6B61B3AD589009CEBB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6B51B3AD589009CEBB3 /* Images.xcassets */; };
 		4974B6B91B3AD589009CEBB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */; };
 		4974B6C51B3AD589009CEBB3 /* SCPopoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */; };
+		4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		4974B6BE1B3AD589009CEBB3 /* SCPopoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCPopoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974B6C31B3AD589009CEBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPopoverTests.m; sourceTree = "<group>"; };
+		4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverController.h; sourceTree = "<group>"; };
+		4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				4974B6AD1B3AD589009CEBB3 /* AppDelegate.m */,
 				4974B6AF1B3AD589009CEBB3 /* ViewController.h */,
 				4974B6B01B3AD589009CEBB3 /* ViewController.m */,
+				4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */,
+				4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */,
 				4974B6B21B3AD589009CEBB3 /* Main.storyboard */,
 				4974B6B51B3AD589009CEBB3 /* Images.xcassets */,
 				4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4974B6B11B3AD589009CEBB3 /* ViewController.m in Sources */,
+				4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */,
 				4974B6AE1B3AD589009CEBB3 /* AppDelegate.m in Sources */,
 				4974B6AB1B3AD589009CEBB3 /* main.m in Sources */,
 			);
@@ -418,6 +424,7 @@
 				4974B6CA1B3AD589009CEBB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4974B6CB1B3AD589009CEBB3 /* Build configuration list for PBXNativeTarget "SCPopoverTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				4974B6CD1B3AD589009CEBB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

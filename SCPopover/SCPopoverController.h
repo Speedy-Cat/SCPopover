@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SCPopoverController.h
 //  SCPopover
 //
 //  Created by Adrian Ortuzar on 24/06/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
-
+@interface SCPopoverController : UIPopoverController
 
 @end
-
