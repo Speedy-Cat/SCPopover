@@ -11,9 +11,7 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *genderField;
-@property (weak, nonatomic) IBOutlet UITextField *countryField;
-//@property (strong, nonatomic) SCPopoverController *popoverCtrl;
+@property (strong, nonatomic) NSArray *countries;
 
 @end
 
@@ -22,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *jsonString = [[NSBundle mainBundle] pathForResource:@"countries" ofType:@"json"];
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:jsonString encoding:NSUTF8StringEncoding error:NULL];
+    NSData *objectData = [myJSON dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:objectData
+                                                            options:NSJSONReadingMutableContainers
+                                                              error:nil];
+    self.countries = jsonArray;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +39,7 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    SCPopoverController *popover = [SCPopoverController new];
+    SCPopoverController *popover = [[SCPopoverController alloc] initWithTableData:self.countries];
     [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     return NO;
 }

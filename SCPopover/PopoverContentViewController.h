@@ -1,5 +1,5 @@
 //
-//  SCPopoverController.h
+//  PopoverContentViewController.h
 //  SCPopover
 //
 //  Created by Adrian Ortuzar on 24/06/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCPopoverController : UIPopoverController
+@interface PopoverContentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 -(id)initWithTableData:(NSArray*)data;
 

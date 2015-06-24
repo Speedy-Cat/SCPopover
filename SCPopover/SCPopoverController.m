@@ -7,13 +7,14 @@
 //
 
 #import "SCPopoverController.h"
+#import "PopoverContentViewController.h"
 
 
 @implementation SCPopoverController
 
--(id)init{
-    UIViewController *vc = [UIViewController new];
-    vc.view.frame = CGRectMake(0, 0, 500, 500);
+-(id)initWithTableData:(NSArray*)data
+{
+    PopoverContentViewController *vc = [[PopoverContentViewController new] initWithTableData:data];
     self = [super initWithContentViewController:vc];
     if (self) {
         

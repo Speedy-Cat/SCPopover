@@ -78,9 +78,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zpc-W6-8o0" secondAttribute="bottom" constant="38" id="znO-8x-I5X"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="genderField" destination="FFS-3c-tTA" id="KOl-qE-jnY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

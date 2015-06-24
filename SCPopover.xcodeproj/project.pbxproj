@@ -15,6 +15,9 @@
 		4974B6B91B3AD589009CEBB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */; };
 		4974B6C51B3AD589009CEBB3 /* SCPopoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */; };
 		4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */; };
+		4974B6DF1B3AF3E6009CEBB3 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */; };
+		4974B6E01B3AF3E6009CEBB3 /* PopoverContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6DE1B3AF3E6009CEBB3 /* PopoverContentViewController.xib */; };
+		4974B6E41B3AF8D8009CEBB3 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6E31B3AF8D8009CEBB3 /* countries.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,10 @@
 		4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPopoverTests.m; sourceTree = "<group>"; };
 		4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverController.h; sourceTree = "<group>"; };
 		4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverController.m; sourceTree = "<group>"; };
+		4974B6DC1B3AF3E6009CEBB3 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
+		4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
+		4974B6DE1B3AF3E6009CEBB3 /* PopoverContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverContentViewController.xib; sourceTree = "<group>"; };
+		4974B6E31B3AF8D8009CEBB3 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +91,16 @@
 		4974B6A71B3AD589009CEBB3 /* SCPopover */ = {
 			isa = PBXGroup;
 			children = (
+				4974B6E31B3AF8D8009CEBB3 /* countries.json */,
 				4974B6AC1B3AD589009CEBB3 /* AppDelegate.h */,
 				4974B6AD1B3AD589009CEBB3 /* AppDelegate.m */,
 				4974B6AF1B3AD589009CEBB3 /* ViewController.h */,
 				4974B6B01B3AD589009CEBB3 /* ViewController.m */,
 				4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */,
 				4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */,
+				4974B6DC1B3AF3E6009CEBB3 /* PopoverContentViewController.h */,
+				4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */,
+				4974B6DE1B3AF3E6009CEBB3 /* PopoverContentViewController.xib */,
 				4974B6B21B3AD589009CEBB3 /* Main.storyboard */,
 				4974B6B51B3AD589009CEBB3 /* Images.xcassets */,
 				4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */,
@@ -204,8 +215,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4974B6E01B3AF3E6009CEBB3 /* PopoverContentViewController.xib in Resources */,
 				4974B6B41B3AD589009CEBB3 /* Main.storyboard in Resources */,
 				4974B6B91B3AD589009CEBB3 /* LaunchScreen.xib in Resources */,
+				4974B6E41B3AF8D8009CEBB3 /* countries.json in Resources */,
 				4974B6B61B3AD589009CEBB3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +240,7 @@
 				4974B6B11B3AD589009CEBB3 /* ViewController.m in Sources */,
 				4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */,
 				4974B6AE1B3AD589009CEBB3 /* AppDelegate.m in Sources */,
+				4974B6DF1B3AF3E6009CEBB3 /* PopoverContentViewController.m in Sources */,
 				4974B6AB1B3AD589009CEBB3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
