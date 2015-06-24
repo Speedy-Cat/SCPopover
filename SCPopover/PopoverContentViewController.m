@@ -12,16 +12,18 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *tableData;
+@property (strong, nonatomic) UITextField *textField;
 
 @end
 
 @implementation PopoverContentViewController
 
--(id)initWithTableData:(NSArray*)data
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField
 {
     self = [super init];
     if(self){
         self.tableData = data;
+        self.textField = textField;
     }
     return self;
 }
@@ -102,6 +104,11 @@
     
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.textField.text = self.tableData[indexPath.row];
 }
 
 

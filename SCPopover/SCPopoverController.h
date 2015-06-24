@@ -10,6 +10,6 @@
 
 @interface SCPopoverController : UIPopoverController
 
--(id)initWithTableData:(NSArray*)data;
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField;
 
 @end

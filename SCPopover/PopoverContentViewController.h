@@ -10,6 +10,6 @@
 
 @interface PopoverContentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
--(id)initWithTableData:(NSArray*)data;
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField;
 
 @end

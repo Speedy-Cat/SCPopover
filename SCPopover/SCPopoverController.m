@@ -12,9 +12,9 @@
 
 @implementation SCPopoverController
 
--(id)initWithTableData:(NSArray*)data
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField
 {
-    PopoverContentViewController *vc = [[PopoverContentViewController new] initWithTableData:data];
+    PopoverContentViewController *vc = [[PopoverContentViewController new] initWithTableData:data forTextField:(UITextField*)textField];
     self = [super initWithContentViewController:vc];
     if (self) {
         

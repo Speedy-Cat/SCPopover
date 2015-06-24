@@ -39,7 +39,7 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    SCPopoverController *popover = [[SCPopoverController alloc] initWithTableData:self.countries];
+    SCPopoverController *popover = [[SCPopoverController alloc] initWithTableData:self.countries forTextField:(UITextField*)textField];
     [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     return NO;
 }
