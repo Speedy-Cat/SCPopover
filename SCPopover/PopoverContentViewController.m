@@ -10,7 +10,7 @@
 
 @interface PopoverContentViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) UITextField *textField;
 
@@ -31,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.view addSubview:self.tableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,15 +41,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;   
+    }
+    return _tableView;
 }
-*/
 
 #pragma mark - UITableDataSourceDelegate
 
