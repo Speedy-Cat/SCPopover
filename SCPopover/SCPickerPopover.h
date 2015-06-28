@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCPopoverController : UIPopoverController
+@interface SCPickerPopover : UIPopoverController
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField;
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size;
 
 @end

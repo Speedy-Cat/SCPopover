@@ -41,7 +41,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6o5-86-YZ9"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Left" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45J-Vy-XT7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Table Popover" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45J-Vy-XT7">
                                 <rect key="frame" x="16" y="285" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="1Ui-Q3-cII"/>
@@ -78,6 +78,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zpc-W6-8o0" secondAttribute="bottom" constant="38" id="znO-8x-I5X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tablePopoverTextField" destination="45J-Vy-XT7" id="GMK-ei-rJi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

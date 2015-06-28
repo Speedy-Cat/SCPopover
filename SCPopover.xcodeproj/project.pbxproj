@@ -14,9 +14,12 @@
 		4974B6B61B3AD589009CEBB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6B51B3AD589009CEBB3 /* Images.xcassets */; };
 		4974B6B91B3AD589009CEBB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */; };
 		4974B6C51B3AD589009CEBB3 /* SCPopoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */; };
-		4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */; };
-		4974B6DF1B3AF3E6009CEBB3 /* PopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */; };
+		4974B6D21B3ADAF8009CEBB3 /* SCPickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6D11B3ADAF8009CEBB3 /* SCPickerPopover.m */; };
+		4974B6DF1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6DD1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.m */; };
 		4974B6E41B3AF8D8009CEBB3 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 4974B6E31B3AF8D8009CEBB3 /* countries.json */; };
+		D56BD6601B3F6B6A0037535A /* SCPopoverContentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D56BD65F1B3F6B6A0037535A /* SCPopoverContentPickerViewController.m */; };
+		D56BD6631B3F75AD0037535A /* SCPopoverContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D56BD6621B3F75AD0037535A /* SCPopoverContentViewController.m */; };
+		D56BD6661B4052670037535A /* SCTablePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D56BD6651B4052670037535A /* SCTablePopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,11 +46,17 @@
 		4974B6BE1B3AD589009CEBB3 /* SCPopoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCPopoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974B6C31B3AD589009CEBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPopoverTests.m; sourceTree = "<group>"; };
-		4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverController.h; sourceTree = "<group>"; };
-		4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverController.m; sourceTree = "<group>"; };
-		4974B6DC1B3AF3E6009CEBB3 /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
-		4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverContentViewController.m; sourceTree = "<group>"; };
+		4974B6D01B3ADAF8009CEBB3 /* SCPickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPickerPopover.h; sourceTree = "<group>"; };
+		4974B6D11B3ADAF8009CEBB3 /* SCPickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPickerPopover.m; sourceTree = "<group>"; };
+		4974B6DC1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverContentTableViewController.h; sourceTree = "<group>"; };
+		4974B6DD1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverContentTableViewController.m; sourceTree = "<group>"; };
 		4974B6E31B3AF8D8009CEBB3 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		D56BD65E1B3F6B690037535A /* SCPopoverContentPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverContentPickerViewController.h; sourceTree = "<group>"; };
+		D56BD65F1B3F6B6A0037535A /* SCPopoverContentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverContentPickerViewController.m; sourceTree = "<group>"; };
+		D56BD6611B3F75AD0037535A /* SCPopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverContentViewController.h; sourceTree = "<group>"; };
+		D56BD6621B3F75AD0037535A /* SCPopoverContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverContentViewController.m; sourceTree = "<group>"; };
+		D56BD6641B4052670037535A /* SCTablePopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTablePopover.h; sourceTree = "<group>"; };
+		D56BD6651B4052670037535A /* SCTablePopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTablePopover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +103,16 @@
 				4974B6AD1B3AD589009CEBB3 /* AppDelegate.m */,
 				4974B6AF1B3AD589009CEBB3 /* ViewController.h */,
 				4974B6B01B3AD589009CEBB3 /* ViewController.m */,
-				4974B6D01B3ADAF8009CEBB3 /* SCPopoverController.h */,
-				4974B6D11B3ADAF8009CEBB3 /* SCPopoverController.m */,
-				4974B6DC1B3AF3E6009CEBB3 /* PopoverContentViewController.h */,
-				4974B6DD1B3AF3E6009CEBB3 /* PopoverContentViewController.m */,
+				4974B6D01B3ADAF8009CEBB3 /* SCPickerPopover.h */,
+				4974B6D11B3ADAF8009CEBB3 /* SCPickerPopover.m */,
+				D56BD6641B4052670037535A /* SCTablePopover.h */,
+				D56BD6651B4052670037535A /* SCTablePopover.m */,
+				D56BD6611B3F75AD0037535A /* SCPopoverContentViewController.h */,
+				D56BD6621B3F75AD0037535A /* SCPopoverContentViewController.m */,
+				4974B6DC1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.h */,
+				4974B6DD1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.m */,
+				D56BD65E1B3F6B690037535A /* SCPopoverContentPickerViewController.h */,
+				D56BD65F1B3F6B6A0037535A /* SCPopoverContentPickerViewController.m */,
 				4974B6B21B3AD589009CEBB3 /* Main.storyboard */,
 				4974B6B51B3AD589009CEBB3 /* Images.xcassets */,
 				4974B6B71B3AD589009CEBB3 /* LaunchScreen.xib */,
@@ -234,10 +249,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4974B6B11B3AD589009CEBB3 /* ViewController.m in Sources */,
-				4974B6D21B3ADAF8009CEBB3 /* SCPopoverController.m in Sources */,
+				4974B6D21B3ADAF8009CEBB3 /* SCPickerPopover.m in Sources */,
+				D56BD6601B3F6B6A0037535A /* SCPopoverContentPickerViewController.m in Sources */,
 				4974B6AE1B3AD589009CEBB3 /* AppDelegate.m in Sources */,
-				4974B6DF1B3AF3E6009CEBB3 /* PopoverContentViewController.m in Sources */,
+				D56BD6661B4052670037535A /* SCTablePopover.m in Sources */,
+				4974B6DF1B3AF3E6009CEBB3 /* SCPopoverContentTableViewController.m in Sources */,
 				4974B6AB1B3AD589009CEBB3 /* main.m in Sources */,
+				D56BD6631B3F75AD0037535A /* SCPopoverContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

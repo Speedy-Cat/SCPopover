@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "SCPopoverController.h"
+#import "SCPickerPopover.h"
+#import "SCTablePopover.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) NSArray *countries;
+@property (weak, nonatomic) IBOutlet UITextField *tablePopoverTextField;
 
 @end
 
@@ -39,8 +41,18 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    SCPopoverController *popover = [[SCPopoverController alloc] initWithTableData:self.countries forTextField:(UITextField*)textField];
-    [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    if (textField == self.tablePopoverTextField) {
+        CGSize size = CGSizeMake(350, 600);
+        SCTablePopover *popover = [[SCTablePopover alloc] initWithTableData:self.countries forTextField:textField withSize:size];
+        [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }else{
+        CGSize size = CGSizeMake(200, 0);// height is fixed to 216
+        NSArray *genderArray = @[@"Male", @"Female"];
+        SCPickerPopover *popover = [[SCPickerPopover alloc] initWithTableData:genderArray forTextField:textField withSize:size];
+        [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+
+    
     return NO;
 }
 

@@ -6,27 +6,16 @@
 //  Copyright (c) 2015 Adrian Ortuzar. All rights reserved.
 //
 
-#import "PopoverContentViewController.h"
+#import "SCPopoverContentTableViewController.h"
 
-@interface PopoverContentViewController ()
+@interface SCPopoverContentTableViewController ()
 
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSArray *tableData;
-@property (strong, nonatomic) UITextField *textField;
 
 @end
 
-@implementation PopoverContentViewController
+@implementation SCPopoverContentTableViewController
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField
-{
-    self = [super init];
-    if(self){
-        self.tableData = data;
-        self.textField = textField;
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +35,7 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.frame];
         _tableView.delegate = self;
-        _tableView.dataSource = self;   
+        _tableView.dataSource = self;
     }
     return _tableView;
 }
