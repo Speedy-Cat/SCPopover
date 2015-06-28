@@ -10,6 +10,6 @@
 
 @interface SCTablePopover : UIPopoverController
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size;
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected;
 
 @end
