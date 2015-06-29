@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>484364CE-4A3A-442A-A8A7-479E0C8554FF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SCPopoverTestProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>48A9373DCCF0E3B9327B31A22035395DE3E4A5E7</key>
+		<string>https://github.com/adrianortuzar/SCPopover.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SCPopoverTestProject.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>48A9373DCCF0E3B9327B31A22035395DE3E4A5E7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/adrianortuzar/SCPopover.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>48A9373DCCF0E3B9327B31A22035395DE3E4A5E7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>48A9373DCCF0E3B9327B31A22035395DE3E4A5E7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SCPopover</string>
+		</dict>
+	</array>
+</dict>
+</plist>

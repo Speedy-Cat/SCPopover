@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4974B6A41B3AD589009CEBB3"
-               BuildableName = "SCPopover.app"
-               BlueprintName = "SCPopover"
-               ReferencedContainer = "container:SCPopover.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4974B6BD1B3AD589009CEBB3"
-               BuildableName = "SCPopoverTests.xctest"
-               BlueprintName = "SCPopoverTests"
-               ReferencedContainer = "container:SCPopover.xcodeproj">
+               BuildableName = "SCPopoverTestProject.app"
+               BlueprintName = "SCPopoverTestProject"
+               ReferencedContainer = "container:SCPopoverTestProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4974B6BD1B3AD589009CEBB3"
-               BuildableName = "SCPopoverTests.xctest"
-               BlueprintName = "SCPopoverTests"
-               ReferencedContainer = "container:SCPopover.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4974B6A41B3AD589009CEBB3"
-            BuildableName = "SCPopover.app"
-            BlueprintName = "SCPopover"
-            ReferencedContainer = "container:SCPopover.xcodeproj">
+            BuildableName = "SCPopoverTestProject.app"
+            BlueprintName = "SCPopoverTestProject"
+            ReferencedContainer = "container:SCPopoverTestProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4974B6A41B3AD589009CEBB3"
-            BuildableName = "SCPopover.app"
-            BlueprintName = "SCPopover"
-            ReferencedContainer = "container:SCPopover.xcodeproj">
+            BuildableName = "SCPopoverTestProject.app"
+            BlueprintName = "SCPopoverTestProject"
+            ReferencedContainer = "container:SCPopoverTestProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4974B6A41B3AD589009CEBB3"
-            BuildableName = "SCPopover.app"
-            BlueprintName = "SCPopover"
-            ReferencedContainer = "container:SCPopover.xcodeproj">
+            BuildableName = "SCPopoverTestProject.app"
+            BlueprintName = "SCPopoverTestProject"
+            ReferencedContainer = "container:SCPopoverTestProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

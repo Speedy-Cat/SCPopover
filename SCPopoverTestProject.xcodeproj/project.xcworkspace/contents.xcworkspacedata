@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SCPopover.xcodeproj">
+      location = "self:/Users/scaura/Documents/SCPopover/SCPopoverTestProject.xcodeproj">
    </FileRef>
 </Workspace>
