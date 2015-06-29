@@ -136,14 +136,14 @@
 			children = (
 				49DB55AA1B418939008D75CE /* SCPickerPopover.h */,
 				49DB55AB1B418939008D75CE /* SCPickerPopover.m */,
+				49DB55B21B418939008D75CE /* SCTablePopover.h */,
+				49DB55B31B418939008D75CE /* SCTablePopover.m */,
+				49DB55B01B418939008D75CE /* SCPopoverContentViewController.h */,
+				49DB55B11B418939008D75CE /* SCPopoverContentViewController.m */,
 				49DB55AC1B418939008D75CE /* SCPopoverContentPickerViewController.h */,
 				49DB55AD1B418939008D75CE /* SCPopoverContentPickerViewController.m */,
 				49DB55AE1B418939008D75CE /* SCPopoverContentTableViewController.h */,
 				49DB55AF1B418939008D75CE /* SCPopoverContentTableViewController.m */,
-				49DB55B01B418939008D75CE /* SCPopoverContentViewController.h */,
-				49DB55B11B418939008D75CE /* SCPopoverContentViewController.m */,
-				49DB55B21B418939008D75CE /* SCTablePopover.h */,
-				49DB55B31B418939008D75CE /* SCTablePopover.m */,
 			);
 			path = SCPopover;
 			sourceTree = "<group>";

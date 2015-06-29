@@ -11,5 +11,10 @@
 
 @interface SCPopoverContentTableViewController : SCPopoverContentViewController <UITableViewDataSource, UITableViewDelegate>
 
+-(id)initWithTableData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSString*)selected
+         withSearchBar:(BOOL)isSearchBar;
 
 @end

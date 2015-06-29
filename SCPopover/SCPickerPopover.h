@@ -10,6 +10,9 @@
 
 @interface SCPickerPopover : UIPopoverController
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected;
+-(id)initWithTableData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSString *)selected;
 
 @end

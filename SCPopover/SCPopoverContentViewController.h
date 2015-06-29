@@ -15,6 +15,9 @@
 @property (strong, nonatomic) NSString *selected;
 @property (nonatomic) CGSize size;
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString*)selected;
+-(id)initWithTableData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSString*)selected;
 
 @end

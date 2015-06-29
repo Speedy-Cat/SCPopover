@@ -11,18 +11,40 @@
 @interface SCPopoverContentTableViewController ()
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (nonatomic) BOOL isSearchBar;
 
 @end
 
 @implementation SCPopoverContentTableViewController
 
+-(id)initWithTableData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSString*)selected
+         withSearchBar:(BOOL)isSearchBar
+{
+    self = [super init];
+    if(self){
+        self.tableData = data;
+        self.textField = textField;
+        self.size = size;
+        self.selected = selected;
+        self.isSearchBar = isSearchBar;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+
     [self.view addSubview:self.tableView];
     
+    if(self.isSearchBar){
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.size.width, 50)];
+        [self.view addSubview:self.searchBar];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +55,10 @@
 -(UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+        // set frame depend if it has search bar
+        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame)) : self.view.frame;
+        // init table
+        _tableView = [[UITableView alloc] initWithFrame:frame];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }

@@ -11,9 +11,9 @@
 
 @implementation SCTablePopover
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected
+-(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected withSearchBar:(BOOL)isSearchBar
 {
-    SCPopoverContentTableViewController *vc = [[SCPopoverContentTableViewController new] initWithTableData:data forTextField:(UITextField*)textField withSize:size withItemSelected:selected];
+    SCPopoverContentTableViewController *vc = [[SCPopoverContentTableViewController new] initWithTableData:data forTextField:(UITextField*)textField withSize:size withItemSelected:selected withSearchBar:isSearchBar];
     
     self = [self initWithContentViewController:vc];
     if (self) {

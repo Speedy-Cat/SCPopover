@@ -12,11 +12,17 @@
 
 @implementation SCPickerPopover
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected
+-(id)initWithTableData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSString *)selected
 {
     
     size = CGSizeMake(size.width, 216);//216px is the max height of picker view
-    SCPopoverContentPickerViewController *vc = [[SCPopoverContentPickerViewController new] initWithTableData:data forTextField:(UITextField*)textField withSize:size withItemSelected:selected];
+    SCPopoverContentPickerViewController *vc = [[SCPopoverContentPickerViewController new] initWithTableData:data
+                                                                                                forTextField:(UITextField*)textField
+                                                                                                    withSize:size
+                                                                                            withItemSelected:selected];
     
     self = [self initWithContentViewController:vc];
     if (self) {
