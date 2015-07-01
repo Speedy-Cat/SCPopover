@@ -12,7 +12,9 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *data;
 @property (nonatomic) BOOL isSearchBar;
+
 
 @end
 
@@ -26,7 +28,8 @@
 {
     self = [super init];
     if(self){
-        self.tableData = data;
+        self.data = data; // the whole data.
+        self.tableData = data; // the data that show the table view. Some times is filtered.
         self.textField = textField;
         self.size = size;
         self.selected = selected;
@@ -42,6 +45,7 @@
     // add seach bar
     if(self.isSearchBar){
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.size.width, 50)];
+        self.searchBar.delegate = self;
         [self.view addSubview:self.searchBar];
     }
     
@@ -65,6 +69,21 @@
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
+{
+    if (searchText.length) {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@",searchText];
+        NSArray* filteredData = [self.data filteredArrayUsingPredicate:predicate];
+        self.tableData = filteredData;
+    }else{
+        self.tableData = self.data;
+    }
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableDataSourceDelegate

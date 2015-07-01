@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverContentViewController.h"
 
-@interface SCPopoverContentTableViewController : SCPopoverContentViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SCPopoverContentTableViewController : SCPopoverContentViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 -(id)initWithTableData:(NSArray*)data
           forTextField:(UITextField*)textField
