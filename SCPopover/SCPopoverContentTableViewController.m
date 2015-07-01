@@ -38,13 +38,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
-    [self.view addSubview:self.tableView];
     
+    // add seach bar
     if(self.isSearchBar){
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.size.width, 50)];
         [self.view addSubview:self.searchBar];
     }
+    
+    // add subview
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
