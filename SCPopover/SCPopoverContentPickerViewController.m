@@ -71,7 +71,9 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component
 {
-    self.textField.text = self.tableData[row];
+    if (self.tableData.count) {
+        self.textField.text = self.tableData[row];
+    }
 }
 
 -(void)selectRow {
