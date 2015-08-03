@@ -47,7 +47,7 @@
         [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }else{
         CGSize size = CGSizeMake(200, 0);// height is fixed to 216
-        NSArray *genderArray = @[@"Male", @"Female"];
+        NSArray *genderArray = @[@"Male", @"Female",@"Male", @"Female",@"Male", @"Female",@"Male", @"Female"];
         NSString *selected = ([textField.text isEqualToString:@""])?nil:textField.text;
         
         SCPickerPopover *popover = [[SCPickerPopover alloc] initWithTableData:genderArray forTextField:textField withSize:size withItemSelected:selected];

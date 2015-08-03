@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kBarHeight 40
+
 @interface SCPopoverContentViewController : UIViewController
 
 @property (strong, nonatomic) NSArray *tableData;

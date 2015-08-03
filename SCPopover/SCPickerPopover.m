@@ -18,7 +18,7 @@
       withItemSelected:(NSString *)selected
 {
     
-    size = CGSizeMake(size.width, 216);//216px is the max height of picker view
+    size = CGSizeMake(size.width, 216 + kBarHeight);//216px is the max height of picker view
     SCPopoverContentPickerViewController *vc = [[SCPopoverContentPickerViewController new] initWithTableData:data
                                                                                                 forTextField:(UITextField*)textField
                                                                                                     withSize:size

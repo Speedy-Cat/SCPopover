@@ -19,7 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // add the picker
     [self.view addSubview:self.pickerView];
+    
+    // add bar
+    UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
+    bar.backgroundColor = [UIColor redColor];
+    int buttonWidth = 70;
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, CGRectGetHeight(bar.frame))];
+    [cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
+    cancelButton.backgroundColor = [UIColor greenColor];
+    
+    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(bar.frame) - buttonWidth, 0, buttonWidth, CGRectGetHeight(bar.frame))];
+    [doneButton setTitle:@"done" forState:UIControlStateNormal];
+    doneButton.backgroundColor = [UIColor greenColor];
+    
+    [bar addSubview:cancelButton];
+    [bar addSubview:doneButton];
+    
+    [self.view addSubview:bar];
     
     // decided what to print in text view when init popover
     NSString *stringToPrint;
@@ -42,7 +61,7 @@
 -(UIPickerView *)pickerView
 {
     if (!_pickerView) {
-        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
+        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kBarHeight, self.size.width, self.size.height)];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
         [self selectRow];
