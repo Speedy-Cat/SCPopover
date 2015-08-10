@@ -10,8 +10,15 @@
 
 #define kBarHeight 40
 
+@protocol SCPopoverContentDelegate <NSObject>
+
+-(void)didContentEndEditing;
+
+@end
+
 @interface SCPopoverContentViewController : UIViewController
 
+@property (nonatomic, strong) id <SCPopoverContentDelegate> delegate;
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) UITextField *textField;
 @property (strong, nonatomic) NSString *selected;

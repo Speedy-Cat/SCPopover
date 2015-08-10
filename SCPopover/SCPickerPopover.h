@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCPopoverContentPickerViewController.h"
 
-@interface SCPickerPopover : UIPopoverController
+@interface SCPickerPopover : UIPopoverController <SCPopoverContentDelegate>
 
 -(id)initWithTableData:(NSArray*)data
           forTextField:(UITextField*)textField

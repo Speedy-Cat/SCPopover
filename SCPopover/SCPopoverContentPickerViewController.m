@@ -25,16 +25,27 @@
     
     // add bar
     UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
-    bar.backgroundColor = [UIColor redColor];
     int buttonWidth = 70;
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, CGRectGetHeight(bar.frame))];
+    UIColor *defaultcolor = [UIColor colorWithRed:0 green:122.0/255 blue:255.0/255 alpha:1];
+    UIColor *highlightedColor = [UIColor colorWithRed:0 green:122.0/255 blue:255.0/255 alpha:0.5];
     [cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
-    cancelButton.backgroundColor = [UIColor greenColor];
+    [cancelButton setTitleColor:defaultcolor forState:UIControlStateNormal];
+    [cancelButton setTitleColor:highlightedColor forState:UIControlStateHighlighted];
+    [cancelButton addTarget:self
+                   action:@selector(pressCancelButton:)
+         forControlEvents:UIControlEventTouchUpInside];
     
+    //
     UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(bar.frame) - buttonWidth, 0, buttonWidth, CGRectGetHeight(bar.frame))];
     [doneButton setTitle:@"done" forState:UIControlStateNormal];
-    doneButton.backgroundColor = [UIColor greenColor];
+    [doneButton addTarget:self
+                   action:@selector(pressDoneButton:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [doneButton setTitleColor:defaultcolor forState:UIControlStateNormal];
+    [doneButton setTitleColor:highlightedColor forState:UIControlStateHighlighted];
     
+    //
     [bar addSubview:cancelButton];
     [bar addSubview:doneButton];
     
@@ -48,6 +59,27 @@
         stringToPrint = self.tableData[0];
     }
     self.textField.text = stringToPrint;
+}
+
+-(void)pressDoneButton:(id)sender
+{
+    int selectedRow = [self.pickerView selectedRowInComponent:0];
+    if (self.tableData.count) {
+        self.textField.text = self.tableData[selectedRow];
+    }
+    
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
+}
+
+-(void)pressCancelButton:(id)sender
+{
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
 }
 
 
@@ -91,7 +123,7 @@
        inComponent:(NSInteger)component
 {
     if (self.tableData.count) {
-        self.textField.text = self.tableData[row];
+        //self.textField.text = self.tableData[row];
     }
 }
 
