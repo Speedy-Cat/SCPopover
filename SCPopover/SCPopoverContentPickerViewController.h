@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverContentViewController.h"
 
-@interface SCPopoverContentPickerViewController : SCPopoverContentViewController  <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface SCPopoverContentPickerViewController : SCPopoverContentViewController  <UIPickerViewDataSource, UIPickerViewDelegate, SCPopoverBarDelegate>
 
 @end

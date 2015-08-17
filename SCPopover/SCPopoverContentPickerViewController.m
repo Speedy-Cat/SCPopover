@@ -24,31 +24,8 @@
     [self.view addSubview:self.pickerView];
     
     // add bar
-    UIView *bar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
-    int buttonWidth = 70;
-    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, buttonWidth, CGRectGetHeight(bar.frame))];
-    UIColor *defaultcolor = [UIColor colorWithRed:0 green:122.0/255 blue:255.0/255 alpha:1];
-    UIColor *highlightedColor = [UIColor colorWithRed:0 green:122.0/255 blue:255.0/255 alpha:0.5];
-    [cancelButton setTitle:@"cancel" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:defaultcolor forState:UIControlStateNormal];
-    [cancelButton setTitleColor:highlightedColor forState:UIControlStateHighlighted];
-    [cancelButton addTarget:self
-                   action:@selector(pressCancelButton:)
-         forControlEvents:UIControlEventTouchUpInside];
-    
-    //
-    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(bar.frame) - buttonWidth, 0, buttonWidth, CGRectGetHeight(bar.frame))];
-    [doneButton setTitle:@"done" forState:UIControlStateNormal];
-    [doneButton addTarget:self
-                   action:@selector(pressDoneButton:)
-     forControlEvents:UIControlEventTouchUpInside];
-    [doneButton setTitleColor:defaultcolor forState:UIControlStateNormal];
-    [doneButton setTitleColor:highlightedColor forState:UIControlStateHighlighted];
-    
-    //
-    [bar addSubview:cancelButton];
-    [bar addSubview:doneButton];
-    
+    SCPopoverBarView *bar = [[SCPopoverBarView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
+    bar.delegate = self;
     [self.view addSubview:bar];
     
     // decided what to print in text view when init popover
@@ -60,28 +37,6 @@
     }
     self.textField.text = stringToPrint;
 }
-
--(void)pressDoneButton:(id)sender
-{
-    int selectedRow = [self.pickerView selectedRowInComponent:0];
-    if (self.tableData.count) {
-        self.textField.text = self.tableData[selectedRow];
-    }
-    
-    // close popover
-    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
-        [self.delegate didContentEndEditing];
-    }
-}
-
--(void)pressCancelButton:(id)sender
-{
-    // close popover
-    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
-        [self.delegate didContentEndEditing];
-    }
-}
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -140,7 +95,27 @@
     }
 }
 
+#pragma mark - SCPopoverBarDelegate
 
+-(void)didPressDoneButton
+{
+    int selectedRow = [self.pickerView selectedRowInComponent:0];
+    if (self.tableData.count) {
+        self.textField.text = self.tableData[selectedRow];
+    }
+    
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
+}
 
+-(void)didPressCancelButton
+{
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
+}
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49448DD71B820E1400D586FE /* SCPopoverBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49448DD61B820E1400D586FE /* SCPopoverBarView.m */; };
 		4974B6C51B3AD589009CEBB3 /* SCPopoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974B6C41B3AD589009CEBB3 /* SCPopoverTests.m */; };
 		49DB559C1B4188CA008D75CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DB55871B4188CA008D75CE /* AppDelegate.m */; };
 		49DB559D1B4188CA008D75CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DB55881B4188CA008D75CE /* LaunchScreen.xib */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49448DD51B820E1400D586FE /* SCPopoverBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopoverBarView.h; sourceTree = "<group>"; };
+		49448DD61B820E1400D586FE /* SCPopoverBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopoverBarView.m; sourceTree = "<group>"; };
 		4974B6A51B3AD589009CEBB3 /* SCPopoverTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPopoverTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974B6BE1B3AD589009CEBB3 /* SCPopoverTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCPopoverTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4974B6C31B3AD589009CEBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				49DB55AD1B418939008D75CE /* SCPopoverContentPickerViewController.m */,
 				49DB55AE1B418939008D75CE /* SCPopoverContentTableViewController.h */,
 				49DB55AF1B418939008D75CE /* SCPopoverContentTableViewController.m */,
+				49448DD51B820E1400D586FE /* SCPopoverBarView.h */,
+				49448DD61B820E1400D586FE /* SCPopoverBarView.m */,
 			);
 			path = SCPopover;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				49DB55A81B4188CA008D75CE /* ViewController.m in Sources */,
 				49DB55B41B418939008D75CE /* SCPickerPopover.m in Sources */,
 				49DB55B71B418939008D75CE /* SCPopoverContentViewController.m in Sources */,
+				49448DD71B820E1400D586FE /* SCPopoverBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
