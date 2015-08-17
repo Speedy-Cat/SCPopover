@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSArray *data;
 @property (nonatomic) BOOL isSearchBar;
 
-
 @end
 
 @implementation SCPopoverContentTableViewController
@@ -100,6 +99,15 @@
 
 #pragma mark - UITableDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Do some stuff when the row is selected
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.selected = (NSString*)self.tableData[indexPath.row];
+
+    [tableView reloadData];
+}
+
 /*
  *   the cellForRowAtIndexPath takes for argument the tableView (so if the same object
  *   is delegate for several tableViews it can identify which one is asking for a cell),
@@ -128,7 +136,6 @@
          */
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyIdentifier"];
-        
     }
     
     /*
@@ -136,6 +143,14 @@
      *   this row/section
      */
     cell.textLabel.text = self.tableData[indexPath.row];
+    
+    
+    // set selected rows
+    if ([self.selected isEqualToString:cell.textLabel.text]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 
     return cell;
 }
@@ -144,10 +159,8 @@
 
 -(void)didPressDoneButton
 {
-    //int selectedRow = [self.tableView selectedRowInComponent:0];
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    if (self.tableData.count) {
-        self.textField.text = self.tableData[selectedIndexPath.row];
+    if (self.selected) {
+        self.textField.text = self.selected;
     }
     
     [super didPressDoneButton];

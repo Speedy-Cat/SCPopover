@@ -43,7 +43,7 @@
 {
     if (textField == self.tablePopoverTextField) {
         CGSize size = CGSizeMake(350, 600);
-        SCTablePopover *popover = [[SCTablePopover alloc] initWithTableData:self.countries forTextField:textField withSize:size withItemSelected:nil withSearchBar:YES];
+        SCTablePopover *popover = [[SCTablePopover alloc] initWithTableData:self.countries forTextField:textField withSize:size withItemSelected:textField.text withSearchBar:YES];
         [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }else{
         CGSize size = CGSizeMake(200, 0);// height is fixed to 216
