@@ -33,6 +33,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = CGRectMake(0, 0, self.size.width, self.size.height);
+    
+    // add bar
+    SCPopoverBarView *bar = [[SCPopoverBarView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
+    bar.delegate = self;
+    [self.view addSubview:bar];
 
 }
 
@@ -41,14 +46,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - SCPopoverBarDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)didPressDoneButton
+{
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
 }
-*/
+
+-(void)didPressCancelButton
+{
+    // close popover
+    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
+        [self.delegate didContentEndEditing];
+    }
+}
 
 @end

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverBarView.h"
 
-#define kBarHeight 40
 
 @protocol SCPopoverContentDelegate <NSObject>
 
@@ -17,7 +16,7 @@
 
 @end
 
-@interface SCPopoverContentViewController : UIViewController
+@interface SCPopoverContentViewController : UIViewController <SCPopoverBarDelegate>
 
 @property (nonatomic, strong) id <SCPopoverContentDelegate> delegate;
 @property (strong, nonatomic) NSArray *tableData;
@@ -29,5 +28,8 @@
           forTextField:(UITextField*)textField
               withSize:(CGSize)size
       withItemSelected:(NSString*)selected;
+
+-(void)didPressCancelButton;
+-(void)didPressDoneButton;
 
 @end

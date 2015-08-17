@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kBarHeight 40
+
 @protocol SCPopoverBarDelegate <NSObject>
 
 -(void)didPressCancelButton;

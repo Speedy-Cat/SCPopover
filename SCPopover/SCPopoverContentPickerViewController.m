@@ -23,19 +23,10 @@
     // add the picker
     [self.view addSubview:self.pickerView];
     
-    // add bar
-    SCPopoverBarView *bar = [[SCPopoverBarView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
-    bar.delegate = self;
-    [self.view addSubview:bar];
-    
-    // decided what to print in text view when init popover
-    NSString *stringToPrint;
+    // print selected string
     if (self.selected.length) {
-        stringToPrint = self.selected;
-    }else if(self.tableData.count){
-        stringToPrint = self.tableData[0];
+        self.textField.text = self.selected;
     }
-    self.textField.text = stringToPrint;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -104,18 +95,12 @@
         self.textField.text = self.tableData[selectedRow];
     }
     
-    // close popover
-    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
-        [self.delegate didContentEndEditing];
-    }
+    [super didPressDoneButton];
 }
 
 -(void)didPressCancelButton
 {
-    // close popover
-    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
-        [self.delegate didContentEndEditing];
-    }
+    [super didPressCancelButton];
 }
 
 @end

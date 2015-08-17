@@ -44,7 +44,7 @@
     
     // add seach bar
     if(self.isSearchBar){
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.size.width, 50)];
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, kBarHeight, self.size.width, 50)];
         self.searchBar.delegate = self;
         [self.view addSubview:self.searchBar];
     }
@@ -62,7 +62,7 @@
 {
     if (!_tableView) {
         // set frame depend if it has search bar
-        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame)) : self.view.frame;
+        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame) + kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame)) : self.view.frame;
         // init table
         _tableView = [[UITableView alloc] initWithFrame:frame];
         _tableView.delegate = self;
@@ -135,18 +135,27 @@
      *   Now that we have a cell we can configure it to display the data corresponding to
      *   this row/section
      */
-    
-    
     cell.textLabel.text = self.tableData[indexPath.row];
 
-    
     return cell;
-    
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - SCPopoverBarDelegate
+
+-(void)didPressDoneButton
 {
-    self.textField.text = self.tableData[indexPath.row];
+    //int selectedRow = [self.tableView selectedRowInComponent:0];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    if (self.tableData.count) {
+        self.textField.text = self.tableData[selectedIndexPath.row];
+    }
+    
+    [super didPressDoneButton];
+}
+
+-(void)didPressCancelButton
+{
+    [super didPressCancelButton];
 }
 
 

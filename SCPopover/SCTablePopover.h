@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCPopoverContentTableViewController.h"
 
-@interface SCTablePopover : UIPopoverController
+@interface SCTablePopover : UIPopoverController <SCPopoverContentDelegate>
 
 -(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected withSearchBar:(BOOL)isSearchBar;
 
