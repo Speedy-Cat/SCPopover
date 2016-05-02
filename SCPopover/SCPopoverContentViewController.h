@@ -19,15 +19,21 @@
 @interface SCPopoverContentViewController : UIViewController <SCPopoverBarDelegate>
 
 @property (nonatomic, strong) id <SCPopoverContentDelegate> delegate;
-@property (strong, nonatomic) NSArray *tableData;
-@property (strong, nonatomic) UITextField *textField;
-@property (strong, nonatomic) NSString *selected;
-@property (nonatomic) CGSize size;
 
--(id)initWithTableData:(NSArray*)data
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) NSMutableArray *selected;
+@property (nonatomic) CGSize size;
+@property (nonatomic) BOOL isSearchBar;
+@property (nonatomic) NSInteger *maxSelections;
+
+-(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField
               withSize:(CGSize)size
-      withItemSelected:(NSString*)selected;
+      withItemSelected:(NSArray*)selected
+         withSearchBar:(BOOL)isSearchBar
+         maxSelections:(NSInteger*)maxSelections;
 
 -(void)didPressCancelButton;
 -(void)didPressDoneButton;

@@ -43,14 +43,17 @@
 {
     if (textField == self.tablePopoverTextField) {
         CGSize size = CGSizeMake(350, 600);
-        SCTablePopover *popover = [[SCTablePopover alloc] initWithTableData:self.countries forTextField:textField withSize:size withItemSelected:textField.text withSearchBar:YES];
+        
+        SCTablePopover *popover = [[SCTablePopover alloc] initWithData:self.countries forTextField:textField withSize:size withItemSelected:nil withSearchBar:YES maxSelections:(NSInteger*)3];
+        
         [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }else{
         CGSize size = CGSizeMake(200, 0);// height is fixed to 216
         NSArray *genderArray = @[@"Male", @"Female",@"Male", @"Female",@"Male", @"Female",@"Male", @"Female"];
         NSString *selected = ([textField.text isEqualToString:@""])?nil:textField.text;
         
-        SCPickerPopover *popover = [[SCPickerPopover alloc] initWithTableData:genderArray forTextField:textField withSize:size withItemSelected:selected];
+        SCPickerPopover *popover = [[SCPickerPopover alloc] initWithData:genderArray forTextField:textField withSize:size withItemSelected:selected withSearchBar:YES];
+        
         [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 

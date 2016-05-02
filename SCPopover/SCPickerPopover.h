@@ -11,9 +11,10 @@
 
 @interface SCPickerPopover : UIPopoverController <SCPopoverContentDelegate>
 
--(id)initWithTableData:(NSArray*)data
+-(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField
               withSize:(CGSize)size
-      withItemSelected:(NSString *)selected;
+      withItemSelected:(NSString *)selected
+         withSearchBar:(BOOL)isSearchBar;
 
 @end

@@ -11,31 +11,12 @@
 @interface SCPopoverContentTableViewController ()
 
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) UISearchBar *searchBar;
-@property (strong, nonatomic) NSArray *data;
-@property (nonatomic) BOOL isSearchBar;
+@property (strong, nonatomic) NSArray *tableData;
 
 @end
 
 @implementation SCPopoverContentTableViewController
 
--(id)initWithTableData:(NSArray*)data
-          forTextField:(UITextField*)textField
-              withSize:(CGSize)size
-      withItemSelected:(NSString*)selected
-         withSearchBar:(BOOL)isSearchBar
-{
-    self = [super init];
-    if(self){
-        self.data = data; // the whole data.
-        self.tableData = data; // the data that show the table view. Some times is filtered.
-        self.textField = textField;
-        self.size = size;
-        self.selected = selected;
-        self.isSearchBar = isSearchBar;
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +31,9 @@
     
     // add subview
     [self.view addSubview:self.tableView];
+    
+    // data
+    self.tableData = self.data;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,13 +83,35 @@
 
 #pragma mark - UITableDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Do some stuff when the row is selected
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
-    self.selected = (NSString*)self.tableData[indexPath.row];
-
-    [tableView reloadData];
+    NSString *stringSelected = self.tableData[indexPath.row];
+    
+    // print the name in the text slide
+    if ((int)self.maxSelections == 1) {
+        self.textField.text = stringSelected;
+    }
+    
+    
+    
+    // add/remove the selected
+    if ([self.selected containsObject:stringSelected]) {
+        [self.selected removeObject:stringSelected];
+    }
+    else{
+        // remove the last selected when is max selecteions done
+        if ((int)self.maxSelections && self.selected.count == (int)self.maxSelections) {
+            [self.selected removeObjectAtIndex:self.selected.count - 1];
+        }
+        
+        [self.selected addObject:stringSelected];
+    }
+    
+    
+    // reload
+    [self.tableView reloadData];
+    
 }
 
 /*
@@ -146,9 +152,10 @@
     
     
     // set selected rows
-    if ([self.selected isEqualToString:cell.textLabel.text]) {
+    if ([self.selected containsObject:cell.textLabel.text]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }else{
+    }
+    else{
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
@@ -158,11 +165,7 @@
 #pragma mark - SCPopoverBarDelegate
 
 -(void)didPressDoneButton
-{
-    if (self.selected) {
-        self.textField.text = self.selected;
-    }
-    
+{    
     [super didPressDoneButton];
 }
 

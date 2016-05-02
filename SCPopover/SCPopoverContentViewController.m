@@ -14,17 +14,21 @@
 
 @implementation SCPopoverContentViewController
 
--(id)initWithTableData:(NSArray*)data
+-(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField
               withSize:(CGSize)size
-      withItemSelected:(NSString*)selected
+      withItemSelected:(NSArray*)selected
+         withSearchBar:(BOOL)isSearchBar
+         maxSelections:(NSInteger*)maxSelections
 {
     self = [super init];
     if(self){
-        self.tableData = data;
+        self.data = data;
         self.textField = textField;
         self.size = size;
-        self.selected = selected;
+        self.selected = [[NSMutableArray alloc] initWithArray:selected];
+        self.isSearchBar = isSearchBar;
+        self.maxSelections = maxSelections;
     }
     return self;
 }

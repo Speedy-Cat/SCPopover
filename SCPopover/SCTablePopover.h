@@ -11,6 +11,11 @@
 
 @interface SCTablePopover : UIPopoverController <SCPopoverContentDelegate>
 
--(id)initWithTableData:(NSArray*)data forTextField:(UITextField*)textField withSize:(CGSize)size withItemSelected:(NSString *)selected withSearchBar:(BOOL)isSearchBar;
+-(id)initWithData:(NSArray*)data
+          forTextField:(UITextField*)textField
+              withSize:(CGSize)size
+      withItemSelected:(NSArray *)selected
+         withSearchBar:(BOOL)isSearchBar
+         maxSelections:(NSInteger*)maxSelections;
 
 @end

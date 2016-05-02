@@ -24,10 +24,15 @@
     [self.view addSubview:self.pickerView];
     
     // print selected string
-    if (self.selected.length) {
-        self.textField.text = self.selected;
-    }
+    self.textField.text = ^NSString*(){
+        NSString *stringToPrint;
+        if (self.selected.count && 	((NSString*)self.selected[0]).length) {
+            stringToPrint = (NSString*)self.selected[0];
+        }
+        return stringToPrint;
+    }();
 }
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -56,19 +61,19 @@
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return self.tableData.count;
+    return self.data.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return self.tableData[row];
+    return self.data[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component
 {
-    if (self.tableData.count) {
+    if (self.data.count) {
         //self.textField.text = self.tableData[row];
     }
 }
@@ -76,10 +81,11 @@
 -(void)selectRow {
     
     //select row
-    if (self.selected && ![self.selected isEqualToString:@""]) {
-        for (int i = 0; i < [self.tableData count]; i++) {
-            NSString *item = self.tableData[i];
-            if ([item isEqualToString:self.selected]) {
+    NSString *selectedString = (self.selected.count)?(NSString*)self.selected[0]:nil;
+    if (selectedString && ![selectedString isEqualToString:@""]) {
+        for (int i = 0; i < [self.data count]; i++) {
+            NSString *item = self.data[i];
+            if ([item isEqualToString:selectedString]) {
                 [_pickerView selectRow:(NSInteger)i inComponent:0 animated:NO];
             }
         }
@@ -90,9 +96,9 @@
 
 -(void)didPressDoneButton
 {
-    int selectedRow = [self.pickerView selectedRowInComponent:0];
-    if (self.tableData.count) {
-        self.textField.text = self.tableData[selectedRow];
+    int selectedRow = (int)[self.pickerView selectedRowInComponent:0];
+    if (self.data.count) {
+        self.textField.text = self.data[selectedRow];
     }
     
     [super didPressDoneButton];
