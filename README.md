@@ -14,3 +14,5 @@ SCPickerPopover *popover = [[SCPickerPopover alloc] initWithTableData:genderArra
 [popover presentPopoverFromRect:textField.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 ```
 
+
+![screen shot 2016-05-02 at 14 37 34](https://cloud.githubusercontent.com/assets/649600/14954614/24d6acf0-1074-11e6-8f67-b01332e8a3df.png)
