@@ -11,6 +11,7 @@
 
 @implementation SCTablePopover
 
+
 -(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField
               withSize:(CGSize)size
@@ -18,11 +19,11 @@
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
-    SCPopoverContentTableViewController *contentViewController = [[SCPopoverContentTableViewController new] initWithData:data forTextField:textField withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
+    self.ccontentViewController = [[SCPopoverContentTableViewController new] initWithData:data forTextField:textField withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
     
-    self = [self initWithContentViewController:contentViewController];
+    self = [self initWithContentViewController:self.ccontentViewController];
     if (self) {
-        contentViewController.delegate = self;
+        self.ccontentViewController.delegate = self;
         self.popoverContentSize = size;
     }
     return self;
@@ -30,7 +31,16 @@
 
 -(void)didContentEndEditing
 {
-    [self dismissPopoverAnimated:YES];
+    [super dismissPopoverAnimated:YES];
+}
+
+-(void)didPressDoneButton
+{
+    if([self.delegate respondsToSelector:@selector(didPressDoneButton)]){
+        [self.delegate didPressDoneButton];
+    }
+    
+    [super dismissPopoverAnimated:YES];
 }
 
 @end

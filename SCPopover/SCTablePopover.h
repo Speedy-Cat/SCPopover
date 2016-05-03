@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverContentTableViewController.h"
 
+@protocol SCTablePopoverDelegate <UIPopoverControllerDelegate>
+
+-(void)didPressDoneButton;
+
+@end
+
 @interface SCTablePopover : UIPopoverController <SCPopoverContentDelegate>
+
+@property (nonatomic, assign) id<SCTablePopoverDelegate> delegate;
+
+@property (nonatomic, strong) SCPopoverContentTableViewController *ccontentViewController;
 
 -(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField

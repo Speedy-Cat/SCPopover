@@ -54,9 +54,8 @@
 
 -(void)didPressDoneButton
 {
-    // close popover
-    if([self.delegate respondsToSelector:@selector(didContentEndEditing)]){
-        [self.delegate didContentEndEditing];
+    if([self.delegate respondsToSelector:@selector(didPressDoneButton)]){
+        [self.delegate didPressDoneButton];
     }
 }
 

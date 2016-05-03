@@ -14,6 +14,8 @@
 
 -(void)didContentEndEditing;
 
+-(void)didPressDoneButton;
+
 @end
 
 @interface SCPopoverContentViewController : UIViewController <SCPopoverBarDelegate>
