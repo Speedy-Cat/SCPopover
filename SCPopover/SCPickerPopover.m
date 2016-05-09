@@ -34,5 +34,10 @@
     [self dismissPopoverAnimated:YES];
 }
 
+-(void)didPressDoneButton
+{
+    [self dismissPopoverAnimated:YES];
+}
+
 
 @end

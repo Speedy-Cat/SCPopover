@@ -17,7 +17,7 @@
 
 @interface SCTablePopover : UIPopoverController <SCPopoverContentDelegate>
 
-@property (nonatomic, assign) id<SCTablePopoverDelegate> delegate;
+@property (nonatomic, weak) id<SCTablePopoverDelegate> delegate;
 
 @property (nonatomic, strong) SCPopoverContentTableViewController *ccontentViewController;
 

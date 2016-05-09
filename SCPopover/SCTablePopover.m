@@ -11,6 +11,7 @@
 
 @implementation SCTablePopover
 
+@synthesize delegate;
 
 -(id)initWithData:(NSArray*)data
           forTextField:(UITextField*)textField
