@@ -45,7 +45,7 @@
 {
     if (!_tableView) {
         // set frame depend if it has search bar
-        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame) + kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame) - kBarHeight) : self.view.frame;
+        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame) + kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame) - kBarHeight) : CGRectMake(0, kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - kBarHeight);
         // init table
         _tableView = [[UITableView alloc] initWithFrame:frame];
         _tableView.delegate = self;
