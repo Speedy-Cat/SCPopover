@@ -37,8 +37,8 @@
 
 -(void)didPressDoneButton
 {
-    if([self.delegate respondsToSelector:@selector(didPressDoneButton)]){
-        [self.delegate didPressDoneButton];
+    if([self.delegate respondsToSelector:@selector(tablePopoverDidPressDoneButton:)]){
+        [self.delegate tablePopoverDidPressDoneButton:self];
     }
     
     [super dismissPopoverAnimated:YES];

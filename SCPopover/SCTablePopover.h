@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverContentTableViewController.h"
 
+@class SCTablePopover;
+
 @protocol SCTablePopoverDelegate <UIPopoverControllerDelegate>
 
--(void)didPressDoneButton;
+-(void)tablePopoverDidPressDoneButton:(SCTablePopover*)tablePopover;
 
 @end
 
