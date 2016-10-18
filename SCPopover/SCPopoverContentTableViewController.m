@@ -36,6 +36,13 @@
     self.tableData = self.data;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -92,20 +99,19 @@
     if ((int)self.maxSelections == 1 && [self.textField isKindOfClass:[UITextField class]]) {
         self.textField.text = stringSelected;
     }
-    
-    
+
     
     // add/remove the selected
-    if ([self.selected containsObject:stringSelected]) {
-        [self.selected removeObject:stringSelected];
+    if ([self.selectedInMemory containsObject:stringSelected]) {
+        [self.selectedInMemory removeObject:stringSelected];
     }
     else{
         // remove the last selected when is max selecteions done
-        if ((int)self.maxSelections && self.selected.count == (int)self.maxSelections) {
-            [self.selected removeObjectAtIndex:self.selected.count - 1];
+        if ((int)self.maxSelections && self.selectedInMemory.count == (int)self.maxSelections) {
+            [self.selectedInMemory removeObjectAtIndex:self.selectedInMemory.count - 1];
         }
         
-        [self.selected addObject:stringSelected];
+        [self.selectedInMemory addObject:stringSelected];
     }
     
     
@@ -152,7 +158,7 @@
     
     
     // set selected rows
-    if ([self.selected containsObject:cell.textLabel.text]) {
+    if ([self.selectedInMemory containsObject:cell.textLabel.text]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else{

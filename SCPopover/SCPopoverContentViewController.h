@@ -25,7 +25,17 @@
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) UITextField *textField;
+
+/*
+ Options selected when press done
+ */
 @property (strong, nonatomic) NSMutableArray *selected;
+
+/*
+ Options selected when the popover is open. If you close the popover with out press "done" those options will not keep.
+ */
+@property (strong, nonatomic) NSMutableArray *selectedInMemory;
+
 @property (nonatomic) CGSize size;
 @property (nonatomic) BOOL isSearchBar;
 @property (nonatomic) NSInteger *maxSelections;

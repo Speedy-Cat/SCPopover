@@ -45,6 +45,24 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.selectedInMemory = [[NSMutableArray alloc] initWithArray:self.selected];
+    
+    [super viewWillAppear:animated];
+    
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.selectedInMemory = nil;
+    
+    [super viewWillDisappear:animated];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -54,9 +72,13 @@
 
 -(void)didPressDoneButton
 {
+    self.selected = self.selectedInMemory;
+    
     if([self.delegate respondsToSelector:@selector(didPressDoneButton)]){
         [self.delegate didPressDoneButton];
     }
+    
+    
 }
 
 -(void)didPressCancelButton
