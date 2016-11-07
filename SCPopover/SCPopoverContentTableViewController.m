@@ -10,9 +10,6 @@
 
 @interface SCPopoverContentTableViewController ()
 
-@property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSArray *tableData;
-
 @end
 
 @implementation SCPopoverContentTableViewController

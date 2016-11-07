@@ -11,5 +11,7 @@
 
 @interface SCPopoverContentTableViewController : SCPopoverContentViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray *tableData;
 
 @end
