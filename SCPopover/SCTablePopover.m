@@ -20,11 +20,11 @@
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
-    self.ccontentViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
+    self.contentTableViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
     
-    self = [self initWithContentViewController:self.ccontentViewController];
+    self = [self initWithContentViewController:self.contentTableViewController];
     if (self) {
-        self.ccontentViewController.delegate = self;
+        self.contentTableViewController.delegate = self;
         self.popoverContentSize = size;
     }
     return self;

@@ -21,7 +21,7 @@
 
 @property (nonatomic, weak) id<SCTablePopoverDelegate> delegate;
 
-@property (nonatomic, strong) SCPopoverContentTableViewController *ccontentViewController;
+@property (nonatomic, strong) SCPopoverContentTableViewController *contentTableViewController;
 
 -(id)initWithData:(NSArray*)data
           forTargetView:(UIView*)targetView
