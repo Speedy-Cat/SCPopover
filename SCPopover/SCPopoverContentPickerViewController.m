@@ -24,13 +24,16 @@
     [self.view addSubview:self.pickerView];
     
     // print selected string
-    self.textField.text = ^NSString*(){
-        NSString *stringToPrint;
-        if (self.selected.count && 	((NSString*)self.selected[0]).length) {
-            stringToPrint = (NSString*)self.selected[0];
-        }
-        return stringToPrint;
-    }();
+    if ([self.targetView isKindOfClass:[UITextField class]]) {
+        ((UITextField*)self.targetView).text = ^NSString*(){
+            NSString *stringToPrint;
+            if (self.selected.count && 	((NSString*)self.selected[0]).length) {
+                stringToPrint = (NSString*)self.selected[0];
+            }
+            return stringToPrint;
+        }();
+    }
+    
 }
 
 
@@ -98,7 +101,9 @@
 {
     int selectedRow = (int)[self.pickerView selectedRowInComponent:0];
     if (self.data.count) {
-        self.textField.text = self.data[selectedRow];
+        if ([self.targetView isKindOfClass:[UITextField class]]) {
+            ((UITextField*)self.targetView).text = self.data[selectedRow];
+        }
     }
     
     [super didPressDoneButton];

@@ -24,7 +24,7 @@
 
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *data;
-@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) UIView *targetView;
 
 /*
  Options selected when press done
@@ -41,7 +41,7 @@
 @property (nonatomic) NSInteger *maxSelections;
 
 -(id)initWithData:(NSArray*)data
-          forTextField:(UITextField*)textField
+          forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray*)selected
          withSearchBar:(BOOL)isSearchBar

@@ -14,13 +14,13 @@
 @synthesize delegate;
 
 -(id)initWithData:(NSArray*)data
-          forTextField:(UITextField*)textField
+          forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray *)selected
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
-    self.ccontentViewController = [[SCPopoverContentTableViewController new] initWithData:data forTextField:textField withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
+    self.ccontentViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
     
     self = [self initWithContentViewController:self.ccontentViewController];
     if (self) {

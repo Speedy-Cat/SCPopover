@@ -15,7 +15,7 @@
 @implementation SCPopoverContentViewController
 
 -(id)initWithData:(NSArray*)data
-          forTextField:(UITextField*)textField
+          forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray*)selected
          withSearchBar:(BOOL)isSearchBar
@@ -24,7 +24,7 @@
     self = [super init];
     if(self){
         self.data = data;
-        self.textField = textField;
+        self.targetView = targetView;
         self.size = size;
         self.selected = [[NSMutableArray alloc] initWithArray:selected];
         self.isSearchBar = isSearchBar;

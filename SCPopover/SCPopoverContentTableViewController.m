@@ -93,8 +93,8 @@
     NSString *stringSelected = self.tableData[indexPath.row];
     
     // print the name in the text slide
-    if ((int)self.maxSelections == 1 && [self.textField isKindOfClass:[UITextField class]]) {
-        self.textField.text = stringSelected;
+    if ((int)self.maxSelections == 1 && [self.targetView isKindOfClass:[UITextField class]]) {
+        ((UITextField*)self.targetView).text = stringSelected;
     }
 
     

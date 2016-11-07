@@ -24,7 +24,7 @@
 @property (nonatomic, strong) SCPopoverContentTableViewController *ccontentViewController;
 
 -(id)initWithData:(NSArray*)data
-          forTextField:(UITextField*)textField
+          forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray *)selected
          withSearchBar:(BOOL)isSearchBar

@@ -13,7 +13,7 @@
 @interface SCPickerPopover : UIPopoverController <SCPopoverContentDelegate>
 
 -(id)initWithData:(NSArray*)data
-          forTextField:(UITextField*)textField
+          forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSString *)selected
          withSearchBar:(BOOL)isSearchBar;
