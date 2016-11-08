@@ -23,7 +23,7 @@
     if(self.isSearchBar){
         CGRect searchBarFrame = ^CGRect(){
             int y = (self.isButtonBar)?kBarHeight:0;
-            return CGRectMake(0, y, self.size.width, 50);
+            return CGRectMake(0, y, self.size.width, kSearchBarHeight);
         }();
         self.searchBar = [[UISearchBar alloc] initWithFrame:searchBarFrame];
         self.searchBar.delegate = self;

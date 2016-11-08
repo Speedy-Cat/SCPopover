@@ -21,12 +21,42 @@
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
-    self.contentTableViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withButtonBar:isButtonBar withSearchBar:isSearchBar maxSelections:maxSelections];
+    CGSize sizeCalc = ^CGSize(){
+        if (size.width && size.height) {
+            return size;
+        }
+        else{
+            int height = ^int(){
+                int searchBarHeight = (isSearchBar)?kSearchBarHeight:0;
+                int barHeight = (isButtonBar)?kBarHeight:0;
+                int itemsHeight = (int)data.count * 44;
+                return searchBarHeight + itemsHeight + barHeight;
+            }();
+            
+            
+            NSString *longestWord = ^NSString*(){
+                NSString *longestWord;
+                for(NSString *str in data) {
+                    if (longestWord == nil || [str length] > [longestWord length]) {
+                        longestWord = str;
+                    }
+                }
+                return longestWord;
+            }();//nil;
+            
+            UIFont *font = [UIFont fontWithName:@"Helvetica Bold" size:17.f];
+            
+            CGSize size = [longestWord sizeWithAttributes:@{NSFontAttributeName:font}];
+            
+            return CGSizeMake(size.width + 60, height);
+        }
+    }();
+    self.contentTableViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:sizeCalc withItemSelected:selected withButtonBar:isButtonBar withSearchBar:isSearchBar maxSelections:maxSelections];
     
     self = [self initWithContentViewController:self.contentTableViewController];
     if (self) {
         self.contentTableViewController.tablePopoverDelegate = self;
-        self.popoverContentSize = size;
+        self.popoverContentSize = sizeCalc;
     }
     return self;
 }

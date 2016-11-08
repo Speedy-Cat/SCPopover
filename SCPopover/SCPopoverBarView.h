@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define kBarHeight 40
+#define kSearchBarHeight 50
 
 @protocol SCPopoverBarDelegate <NSObject>
 
