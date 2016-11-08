@@ -27,6 +27,7 @@
           forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray *)selected
+        withButtonBar:(BOOL)isButtonBar
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections;
 

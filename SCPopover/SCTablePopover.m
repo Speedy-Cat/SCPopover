@@ -17,10 +17,11 @@
           forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray *)selected
+        withButtonBar:(BOOL)isButtonBar
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
-    self.contentTableViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withSearchBar:isSearchBar maxSelections:maxSelections];
+    self.contentTableViewController = [[SCPopoverContentTableViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:selected withButtonBar:isButtonBar withSearchBar:isSearchBar maxSelections:maxSelections];
     
     self = [self initWithContentViewController:self.contentTableViewController];
     if (self) {

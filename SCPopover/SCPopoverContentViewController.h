@@ -38,12 +38,14 @@
 
 @property (nonatomic) CGSize size;
 @property (nonatomic) BOOL isSearchBar;
+@property (nonatomic) BOOL isButtonBar;
 @property (nonatomic) NSInteger *maxSelections;
 
 -(id)initWithData:(NSArray*)data
           forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray*)selected
+        withButtonBar:(BOOL)isButtonBar
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections;
 

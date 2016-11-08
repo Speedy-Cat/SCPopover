@@ -15,11 +15,12 @@
           forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSString *)selected
+        withButtonBar:(BOOL)isButtonBar
          withSearchBar:(BOOL)isSearchBar
 {
     
     size = CGSizeMake(size.width, 216 + kBarHeight);//216px is the max height of picker view
-    SCPopoverContentPickerViewController *contentViewController = [[SCPopoverContentPickerViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:(selected)?@[selected]:@[] withSearchBar:isSearchBar maxSelections:(NSInteger*)1];
+    SCPopoverContentPickerViewController *contentViewController = [[SCPopoverContentPickerViewController new] initWithData:data forTargetView:targetView withSize:size withItemSelected:(selected)?@[selected]:@[] withButtonBar:(BOOL)isButtonBar withSearchBar:isSearchBar maxSelections:(NSInteger*)1];
     
     self = [self initWithContentViewController:contentViewController];
     if (self) {

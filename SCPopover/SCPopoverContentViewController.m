@@ -18,6 +18,7 @@
           forTargetView:(UIView*)targetView
               withSize:(CGSize)size
       withItemSelected:(NSArray*)selected
+        withButtonBar:(BOOL)isButtonBar
          withSearchBar:(BOOL)isSearchBar
          maxSelections:(NSInteger*)maxSelections
 {
@@ -27,6 +28,7 @@
         self.targetView = targetView;
         self.size = size;
         self.selected = [[NSMutableArray alloc] initWithArray:selected];
+        self.isButtonBar = isButtonBar;
         self.isSearchBar = isSearchBar;
         self.maxSelections = maxSelections;
     }
@@ -39,10 +41,11 @@
     self.view.frame = CGRectMake(0, 0, self.size.width, self.size.height);
     
     // add bar
-    SCPopoverBarView *bar = [[SCPopoverBarView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
-    bar.delegate = self;
-    [self.view addSubview:bar];
-
+    if (_isButtonBar) {
+        SCPopoverBarView *bar = [[SCPopoverBarView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kBarHeight)];
+        bar.delegate = self;
+        [self.view addSubview:bar];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

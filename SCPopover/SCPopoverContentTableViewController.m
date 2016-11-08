@@ -21,7 +21,11 @@
     
     // add seach bar
     if(self.isSearchBar){
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, kBarHeight, self.size.width, 50)];
+        CGRect searchBarFrame = ^CGRect(){
+            int y = (self.isButtonBar)?kBarHeight:0;
+            return CGRectMake(0, y, self.size.width, 50);
+        }();
+        self.searchBar = [[UISearchBar alloc] initWithFrame:searchBarFrame];
         self.searchBar.delegate = self;
         [self.view addSubview:self.searchBar];
     }
@@ -49,7 +53,19 @@
 {
     if (!_tableView) {
         // set frame depend if it has search bar
-        CGRect frame = (self.isSearchBar)? CGRectMake(0, CGRectGetHeight(self.searchBar.frame) + kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame) - kBarHeight) : CGRectMake(0, kBarHeight, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - kBarHeight);
+        CGRect frame = ^CGRect(){
+            if (self.isSearchBar) {
+                int y = (self.isButtonBar)? CGRectGetHeight(self.searchBar.frame) + kBarHeight:CGRectGetHeight(self.searchBar.frame);
+                int height = (self.isButtonBar)? CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame) - kBarHeight : CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.searchBar.frame);
+                return CGRectMake(0, y, CGRectGetWidth(self.view.frame), height);
+            }
+            else{
+                int y = (self.isButtonBar)?kBarHeight:0;
+                int height = (self.isButtonBar)?CGRectGetHeight(self.view.frame) - kBarHeight:CGRectGetHeight(self.view.frame);
+                return CGRectMake(0, y, CGRectGetWidth(self.view.frame), height);
+            }
+        }();
+        
         // init table
         _tableView = [[UITableView alloc] initWithFrame:frame];
         _tableView.delegate = self;
