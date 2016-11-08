@@ -15,9 +15,11 @@
 
 -(void)tablePopoverDidPressDoneButton:(SCTablePopover*)tablePopover;
 
+-(void)tablePopover:(SCTablePopover*)tablePopover didSelectString:(NSString*)stringSelected;
+
 @end
 
-@interface SCTablePopover : UIPopoverController <SCPopoverContentDelegate>
+@interface SCTablePopover : UIPopoverController <SCPopoverTableContentDelegate>
 
 @property (nonatomic, weak) id<SCTablePopoverDelegate> delegate;
 

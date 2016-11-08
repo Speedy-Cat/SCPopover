@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "SCPopoverContentViewController.h"
 
+@protocol SCPopoverTableContentDelegate <SCPopoverContentDelegate>
+
+-(void)didSelectString:(NSString*)stringSelected;
+
+@end
+
 @interface SCPopoverContentTableViewController : SCPopoverContentViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (nonatomic, strong) id <SCPopoverTableContentDelegate> tablePopoverDelegate;
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *tableData;

@@ -25,7 +25,7 @@
     
     self = [self initWithContentViewController:self.contentTableViewController];
     if (self) {
-        self.contentTableViewController.delegate = self;
+        self.contentTableViewController.tablePopoverDelegate = self;
         self.popoverContentSize = size;
     }
     return self;
@@ -43,6 +43,14 @@
     }
     
     [super dismissPopoverAnimated:YES];
+}
+
+//-(void)tablePopover:(SCTablePopover*)tablePopover didSelect:(NSString*)stringSelected;
+-(void)didSelectString:(NSString *)stringSelected
+{
+    if([self.delegate respondsToSelector:@selector(tablePopover:didSelectString:)]){
+        [self.delegate tablePopover:self didSelectString:stringSelected];
+    }
 }
 
 @end

@@ -127,6 +127,15 @@
         [self.selectedInMemory addObject:stringSelected];
     }
     
+    // apply changes if there is no button bar
+    if (!self.isButtonBar) {
+        self.selected = self.selectedInMemory;
+        
+        if([self.tablePopoverDelegate respondsToSelector:@selector(didSelectString:)]){
+            [self.tablePopoverDelegate didSelectString:stringSelected];
+        }
+    }
+    
     
     // reload
     [self.tableView reloadData];
