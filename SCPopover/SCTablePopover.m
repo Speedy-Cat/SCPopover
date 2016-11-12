@@ -56,6 +56,7 @@
     self = [self initWithContentViewController:self.contentTableViewController];
     if (self) {
         self.contentTableViewController.tablePopoverDelegate = self;
+        self.contentTableViewController.delegate = self;
         self.popoverContentSize = sizeCalc;
     }
     return self;
